@@ -1,20 +1,19 @@
 import React, { useState } from "react";
 import Form from "react-bootstrap/Form";
-import FormControl from 'react-bootstrap/FormControl';
+import FormControl from "react-bootstrap/FormControl";
 import Button from "react-bootstrap/Button";
 
-const TodoInput = ({todo, setTodo }) => {
+const TodoInput = ({ todo, setTodo }) => {
+  const [inputTodo, setInputTodo] = useState("");
 
-  const [inputTodo, setInputTodo] = useState("")
+  const handleInput = (e) => {
+    setInputTodo(e.target.value);
+  };
 
-  const handleInput= (e) => {
-    setInputTodo(e.target.value)
-  }
-
-  const handleClick= (e) => {
-    setTodo([...todo, inputTodo])
-    setInputTodo("")
-  }
+  const handleClick = (e) => {
+    setTodo([...todo, inputTodo]);
+    setInputTodo("");
+  };
 
   return (
     <>
@@ -28,7 +27,7 @@ const TodoInput = ({todo, setTodo }) => {
           <Form.Control
             id="inputTask"
             aria-describedby="inputTaskDescription"
-            onChange={(e)=> handleInput(e)}
+            onChange={(e) => handleInput(e)}
             className="mx-auto w-75"
             value={inputTodo}
           />
@@ -37,7 +36,11 @@ const TodoInput = ({todo, setTodo }) => {
             numbers, and must not contain special characters, or emoji.
           </Form.Text>
         </div>
-        <Button className="mt-3 mx-auto w-25" variant="outline-primary" onClick={handleClick}>
+        <Button
+          className="mt-3 mx-auto w-25"
+          variant="outline-primary"
+          onClick={handleClick}
+        >
           Add Task
         </Button>
       </div>
