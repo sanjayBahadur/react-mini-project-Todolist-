@@ -6,10 +6,11 @@ import DoneList from "./Components/DoneList/DoneList";
 
 function App() {
   const [todo, setTodo] = useState([]);
+  const [doneList, setDone] = useState([]);
 
   useEffect(() => {
-    console.log(todo);
-  }, [todo]);
+    console.log(doneList);
+  }, [doneList]);
 
   return (
     <div className="App">
@@ -17,10 +18,10 @@ function App() {
       <div className="container mt-5 mx-auto w-75">
         <div className="row mt-4">
           <div className="col">
-            <TodoList />
+            <TodoList todos={todo} setTodo={setTodo} setDone={setDone} doneList={doneList} />
           </div>
           <div className="col">
-            <DoneList />
+            <DoneList dones={doneList} setDone={setDone}/>
           </div>
         </div>
       </div>
