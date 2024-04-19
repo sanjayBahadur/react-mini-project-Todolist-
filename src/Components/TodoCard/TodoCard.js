@@ -14,6 +14,7 @@ const cleanButton = {
 const TodoCard = ({ task, handleDelete, id, isDone, handleAdd }) => {
   return (
     <>
+    <div className='p-3 pb-4' style={{boxShadow: 'rgba(0, 0, 0, 0.24) 0px 3px 8px'}}>
       <div className="d-flex justify-content-end">
         {!isDone ? (
           <button style={cleanButton} onClick={()=> handleAdd(task, id, handleDelete) }>
@@ -48,7 +49,8 @@ const TodoCard = ({ task, handleDelete, id, isDone, handleAdd }) => {
         </button>
       </div>
       <div>
-        <span className="fs-4">{task}</span>
+        <span className="fs-5">{task}</span>
+      </div>
       </div>
     </>
   );

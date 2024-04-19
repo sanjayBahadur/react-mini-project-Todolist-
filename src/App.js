@@ -16,11 +16,11 @@ function App() {
     <div className="App">
       <TodoInput todo={todo} setTodo={setTodo} />
       <div className="container mt-5 mx-auto w-75">
-        <div className="row mt-4">
-          <div className="col">
+        <div className="row mt-2">
+          <div className="col mr-3">
             <TodoList todos={todo} setTodo={setTodo} setDone={setDone} doneList={doneList} />
           </div>
-          <div className="col">
+          <div className="col ml-3">
             <DoneList dones={doneList} setDone={setDone}/>
           </div>
         </div>

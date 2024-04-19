@@ -4,7 +4,7 @@ import TodoCard from "../TodoCard/TodoCard";
 const TodoList = ({ todos, setTodo, setDone, doneList }) => {
   const cardGenerator = () => {
     if (!todos || todos.length === 0) {
-      return <div>Empty array</div>;
+      return <div className="text-muted">No tasks yet..</div>;
     } else {
       return todos.map((todo, index) => {
         return (
@@ -32,7 +32,10 @@ const TodoList = ({ todos, setTodo, setDone, doneList }) => {
     
   };
 
-  return <>{cardGenerator()}</>;
+  return <><div >
+    <div className='fs-3 mb-2'>Tasks Todo</div>
+    {cardGenerator()}
+    </div></>;
 };
 
 export default TodoList;
